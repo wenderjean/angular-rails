@@ -1,0 +1,11 @@
+<form name="form" ng-controller="CommentControllerForm">
+	<div class="form-group">
+    <textarea class="form-control" ng-model="comment.body" required></textarea>
+  </div>
+  <div class="pull-right">
+  	<button ng-click="save(task)" ng-disabled="form.$invalid" class="btn btn-default">
+			<span class="glyphicon glyphicon-envelope"></span>
+			Enviar Comentário
+	  </button>
+	</div>
+</form>

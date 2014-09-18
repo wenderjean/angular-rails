@@ -1,0 +1,41 @@
+<div class="form-group">
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    	<tr>
+    		<th class="text-center">Início</th>
+    		<th class="text-center">Conclusão</th>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<td  class="text-center">
+    			{{ task.start_date | date }}
+    		</td>
+    		<td  class="text-center">
+    			{{ task.end_date | date }}
+    		</td>
+    	</tr>
+    </tbody>
+  </table>
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    	<tr>
+    		<th class="text-center">Custo Estimado</th>
+    		<th class="text-center">Status da Tarefa</th>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<td class="text-center">
+    			{{ task.cost | currency }}
+    		</td>
+    		<td class="text-center">
+    			{{  }}
+    		</td>
+    	</tr>
+    </tbody>
+  </table>
+</div>

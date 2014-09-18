@@ -1,0 +1,38 @@
+<h4>
+	<span class="glyphicon glyphicon-comment"></span>
+	Comentários
+</h4>
+
+<div class="panel panel-default" ng-controller="CommentControllerList as ctrlCommentList">
+  <div class="panel-body">
+
+  	<ul class="media-list" ng-repeat="comment in comments | limitTo: count">
+		  <li class="media">
+		    <a class="pull-left" href="#">
+		    	ss
+		    </a>
+
+		    <div class="media-body">
+		    	<div class="pull-right">
+			  		<button ng-click="destroy(comment)" class="btn btn-default">
+					  	<span class="glyphicon glyphicon-trash"></span>
+					  </button>
+			  	</div>
+			  	<p>
+			  		{{ comment.body }}
+			  	</p>
+		    </div>
+		  </li>
+		</ul>
+		<div class="text-center">
+			<button ng-click="incrementCount()" class="btn btn-default">
+				Ver mais comentários
+				<span class="glyphicon glyphicon-chevron-down"></span>
+	    </button>
+		<div>
+
+		<p>
+			<div ng-include="'../assets/comment/form.html'"></div>
+		</p>
+  </div>
+</div>
