@@ -29,6 +29,8 @@ var CommentControllerList = function($scope, $routeParams, $http) {
 }
 
 var CommentControllerForm = function($scope, $routeParams, $http) {
+  $scope.comment = {};
+
   $scope.save = function(task) {
     var json = angular.toJson($scope.comment);
     json.task_id = task.id;
@@ -36,6 +38,7 @@ var CommentControllerForm = function($scope, $routeParams, $http) {
     .success(function(response, status, headers) {
       $scope.form.$setPristine();
       $scope.loadComments(response);
+      $scope.comment = {};
     });
   }
 }

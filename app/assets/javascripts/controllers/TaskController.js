@@ -11,12 +11,14 @@ var TaskControllerForm = function($scope, $location, $routeParams, $http) {
   $scope.isEdit = taskId ? true : false;
   $scope.canDelete = false;
   $scope.task = {};
+  $scope.label = 'Nova Tarefa';
 
   $scope.setDelete = function(canDelete) {
     $scope.canDelete = canDelete;
   }
 
   if(taskId) {
+    $scope.label = 'Editar Tarefa';
     $http.get('/tasks/' + taskId).success(function(data) {
       $scope.task = data;
     }).error(function() {
@@ -29,8 +31,9 @@ var TaskControllerForm = function($scope, $location, $routeParams, $http) {
     var URL = HTTP_METHOD == 'POST' ? '/tasks' : '/tasks/' + taskId;
 
     $http({ method: HTTP_METHOD, url: URL, data: json }).success(function(response, status, headers) {
-      // $scope.form.$setPristine();
-      $('#collapseOne').collapse("hide");
+      $scope.form.$setPristine();
+      // $('#collapseOne').collapse("hide");
+      $location.url('/tasks');
     });
   }
 
@@ -39,6 +42,8 @@ var TaskControllerForm = function($scope, $location, $routeParams, $http) {
       $location.url('/tasks');
     });
   }
+
+  TaskControllerList($scope, $http);
 }
 
 var TaskControllerView = function ($scope, $routeParams, $http) {

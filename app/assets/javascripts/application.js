@@ -16,25 +16,34 @@
 //= require angular.min
 //= require angular-route.min
 //= require angular-resource.min
+//= require angular-strap.min
+//= require angular-strap.tpl.min
+//= require angular-locale_pt-br
 //= require_tree ./controllers
 //= require_tree ./directives
 //= require_tree ./filters
 //= require_tree ./services
 
 (function() {
-  app = angular.module('app', ['ngRoute', 'ngResource'])
+  app = angular.module('app', ['ngRoute', 'ngResource', 'mgcrea.ngStrap'])
 
   app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
     .when('/task', { templateUrl: '../assets/task/list.html', controller: 'TaskControllerList' } )
-    .when('/task/new', { templateUrl: '../assets/task/new.html', controller: 'TaskControllerForm' })
-    .when('/task/edit/:id', { templateUrl: '../assets/task/edit.html', controller: 'TaskControllerForm' })
+    .when('/task/new', { templateUrl: '../assets/task/form.html', controller: 'TaskControllerForm' })
+    .when('/task/edit/:id', { templateUrl: '../assets/task/form.html', controller: 'TaskControllerForm' })
     .otherwise({ redirectTo: '/task' })
 
   }])
 
-  app.config(["$httpProvider", function($httpProvider) {
+  app.config(["$httpProvider", "$datepickerProvider", function($httpProvider, $datepickerProvider) {
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+
+    angular.extend($datepickerProvider.defaults, {
+        dateFormat: 'dd/MM/yyyy',
+        autoclose: true
+    });
   }]);
+
 })();

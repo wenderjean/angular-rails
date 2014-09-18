@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 	def index
 		@task = Task.find(params[:task_id])
 		respond_to do |format|
-      format.json { render json: @task.comments }
+      format.json { render json: @task.comments.order(created_at: :desc) }
     end
 	end
 
