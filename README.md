@@ -1,12 +1,12 @@
 # angular-rails
 
-This project is a Rails API using RESTful services and AngularJS for front-end.
+This project is a RoR API using RESTful services and AngularJS for front-end.
 
 ## Dependencies
 
-``Ruby 2.1.2``
-``Rails 4.1.0``
-``Bower``
+``Ruby 2.1.2``<br/>
+``Rails 4.1.0``<br/>
+``Bower``<br/>
 
 ## Running
 

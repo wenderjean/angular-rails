@@ -16,7 +16,7 @@
 /tmp
 
 # Ignore vendor
-/vendor/assets/*
+/vendor
 
 # Ignore OSX files
 /**/*.DS_Store
