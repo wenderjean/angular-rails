@@ -1,11 +1,11 @@
 {
   "name": "API Rails Using AngularJS",
   "version": "0.0.1",
-  "homepage": "https://github.com/wenderjean/Angular_Rails",
+  "homepage": "https://github.com/wenderjean/angular-rails",
   "authors": [
     "Wender Freese <wender.jean@gmail.com>"
   ],
-  "description": "This project is an example showing how to use Rails application with AngularJS",
+  "description": "This project is an example showing how to use RoR application with a REST API and AngularJS",
   "moduleType": [
     "amd"
   ],

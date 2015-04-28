@@ -18,6 +18,8 @@ end
 
 group :test  do
   gem 'capybara'
+  gem 'coveralls', '>=0.8.0', require: false
+  gem 'shoulda-matchers', require: false
   gem 'rspec-rails'
   gem 'database_cleaner'
 end

@@ -18,5 +18,8 @@
 # Ignore vendor
 /vendor
 
+# Ignore coverage
+/coverage/
+
 # Ignore OSX files
 /**/*.DS_Store
